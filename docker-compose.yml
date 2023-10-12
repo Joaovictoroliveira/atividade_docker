@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  apache:
+    container_name: atividade-docker
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    restart: always
+    ports:
+      - '8080:80'
+    volumes:
+      - ./:/var/www/html
+  db:
+    container_name: db-atividade
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: '123@docker'
+      MYSQL_ROOT_PASSWORD: '123@docker'
+    ports:
+      - '3309:3306'
+    expose:
+      - '3309'
+    volumes:
+      - db-atividade:/var/lib/mysql
+
+volumes:
+  db-atividade:
