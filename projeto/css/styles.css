@@ -10,7 +10,7 @@
 
 #paises-table thead {
     color: #ffffff;
-    background-color: #007bff;
+    background-color: #003e80;
 }
 
 .col-id {
@@ -44,6 +44,10 @@
 }
 
 .delete-form {
+    display: inline-block;
+}
+
+.delete-btn {
     background-color: transparent;
     border: none;
     padding: 0; 

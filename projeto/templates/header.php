@@ -25,7 +25,7 @@ if (isset($_SESSION["msg"])) {
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-          <div class="navbar-brand">
+          <div class="navbar-nav">
             <a href="<?= $BASE_URL ?>index.php" id="home-link" class="nav-link active">Países</a>
             <a href="<?= $BASE_URL ?>create.php" class="nav-link active">Adicionar país</a>
           </div>

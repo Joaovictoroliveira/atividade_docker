@@ -52,6 +52,8 @@ if (!empty($data)) {
             echo "e";
         }
     }
+
+    header("Location:" . $BASE_URL . "../index.php");
 }else {
     $id;
 
@@ -66,7 +68,7 @@ if (!empty($data)) {
         $statement->execute();
 
         $result = $statement->get_result();
-        $paises = $result->fetch_row();
+        $paises = $result->fetch_assoc();
     }else {
         $paises = [];
         $query = "SELECT * FROM pais";
@@ -74,7 +76,7 @@ if (!empty($data)) {
         $statement->execute();
 
         $result = $statement->get_result();
-        $paises = $result->fetch_all();
+        $paises = $result->fetch_all(MYSQLI_ASSOC);
     }
 }
  
